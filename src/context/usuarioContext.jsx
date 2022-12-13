@@ -13,7 +13,7 @@ const initialState = {
   email: "admin@gmail.com",
   isAuthenticated: true,
   perfil: undefined,
-  suscription: true,
+  suscription: false,
   fechaFin: undefined,
   type: undefined
 }

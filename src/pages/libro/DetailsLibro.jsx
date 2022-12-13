@@ -69,16 +69,17 @@ const DetailsLibro = () => {
                                 {libro.descripcion}
                             </div>
                         </div>
-                        {state.suscription ?
+                        {!state.isAuthenticated? 
+                        <Link target={'_blank'} href={`${apiLibro.getUri()}${libro.file}`} className='btn bg-theme-element hover:btn-primary' >Registrate ahora</Link>
+                        :state.suscription ?
                         <a target={'_blank'} href={`${apiLibro.getUri()}${libro.file}`} className='btn bg-theme-element hover:btn-primary' >Leer Libro</a>
                         :
-                        <Link className='btn bg-theme-element' to={'/login'}>Suscribirse</Link>
+                        <Link className='btn bg-theme-element' to={'/suscription'}>Suscribirse</Link>
                     }
                     </div>
                 </div>
             </div>
         </>
-
     )
 }
 
