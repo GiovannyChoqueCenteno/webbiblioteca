@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
-  const {state} =useAuth();
+  const {state ,logout} =useAuth();
   return (
     <div className="navbar bg-theme-element text-white">
   <div className="flex-1">
@@ -19,7 +19,7 @@ const Navbar = () => {
       </a>
       <ul className="p-2 bg-theme-element">
         <li><a onClick={()=>{
-          
+          logout();
         }}>Cerrar Sesion</a></li>
       </ul>
     </li>  

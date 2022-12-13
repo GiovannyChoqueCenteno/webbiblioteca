@@ -1,5 +1,6 @@
 export const types = {
     UsuarioLogin: "UsuarioLogin",
     UsuarioRegister: "UsuarioRegister",
-    UsuarioSet: "UsuarioSet"
+    UsuarioSet: "UsuarioSet",
+    UsuarioLogout : "UsuarioLogout"
 }

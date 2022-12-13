@@ -8,10 +8,10 @@ import { types } from "../types/types";
 export const usuarioContext = createContext(null);
 
 const initialState = {
-  id: 1,
-  nombre: "Admin",
-  email: "admin@gmail.com",
-  isAuthenticated: true,
+  id: undefined,
+  nombre: "",
+  email: "",
+  isAuthenticated: false,
   perfil: undefined,
   suscription: false,
   fechaFin: undefined,
@@ -132,14 +132,21 @@ export const UsuarioContextProvider = ({ children }) => {
       payload: obj
     });
   }
-
+  function logout(){
+    dispatch({
+      type: types.UsuarioLogout,
+    });
+    localStorage.removeItem("_token");
+    location.reload();
+  }
   return (
     <usuarioContext.Provider value={{
       state,
       login,
       register,
       compareFace,
-      setContext
+      setContext,
+      logout
     }}>
       {children}
     </usuarioContext.Provider>
